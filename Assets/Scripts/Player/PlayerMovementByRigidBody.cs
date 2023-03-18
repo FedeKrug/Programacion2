@@ -47,6 +47,5 @@ namespace Game.Player
 			_rb.velocity += dir * _speed * Time.fixedDeltaTime;
 		}
 	}
-
 }
 
