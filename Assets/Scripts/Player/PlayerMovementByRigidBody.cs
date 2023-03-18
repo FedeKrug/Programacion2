@@ -1,14 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 
 using UnityEngine;
 
 namespace Game.Player
 {
-	public class PlayerMovementByTransform : MonoBehaviour
+	public class PlayerMovementByRigidBody : MonoBehaviour
 	{
-		[SerializeField, Range(0, 20)] private float _minSpeed, _maxSpeed;
+		[SerializeField] Rigidbody _rb;
+		[SerializeField, Range(0, 200)] private float _minSpeed, _maxSpeed;
 		private float _speed;
 		private float _xAxis, _zAxis;
 
@@ -16,17 +15,11 @@ namespace Game.Player
 		{
 			_speed = _minSpeed;
 		}
-
-
 		private void Update()
 		{
 			_xAxis = Input.GetAxisRaw("Horizontal");
 			_zAxis = Input.GetAxisRaw("Vertical");
 
-			if (_xAxis != 0 || _zAxis != 0)
-			{
-				Move(_xAxis, _zAxis);
-			}
 
 			if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 			{
@@ -38,12 +31,20 @@ namespace Game.Player
 
 			}
 		}
+		private void FixedUpdate()
+		{
+			if (_xAxis != 0 || _zAxis != 0)
+			{
+				MoveWithPhysics(_xAxis, _zAxis);
 
-		private void Move(float xAxis, float zAxis)
+			}
+		}
+
+		private void MoveWithPhysics(float xAxis, float zAxis)
 		{
 			var dir = transform.right * xAxis + transform.forward * zAxis;
 
-			transform.position += dir * _speed * Time.deltaTime;
+			_rb.velocity += dir * _speed * Time.fixedDeltaTime;
 		}
 	}
 
