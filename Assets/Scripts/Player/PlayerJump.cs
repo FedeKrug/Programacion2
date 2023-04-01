@@ -22,6 +22,7 @@ namespace Game.Player
 		private void Jump()
 		{
 			_rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+			//_rb.velocity = new Vector3(_rb.velocity.x, _jumpForce);
 		}
 	}
 }

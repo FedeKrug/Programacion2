@@ -18,6 +18,8 @@ namespace Game.Player
         private void Awake()
         {
             _speed = _minSpeed;
+            _rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
         }
         private void Update()
         {
@@ -36,10 +38,7 @@ namespace Game.Player
         }
         private void FixedUpdate()
         {
-            if (_xAxis != 0 || _zAxis != 0)
-            {
-                MoveWithPhysics(_xAxis, _zAxis);
-            }
+            if (_xAxis != 0 || _zAxis != 0) MoveWithPhysics(_xAxis, _zAxis);
         }
 
         private void MoveWithPhysics(float xAxis, float zAxis)
