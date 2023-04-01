@@ -28,7 +28,6 @@ namespace Game.Player
 			if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
 			{
 				_speed = _minSpeed;
-
 			}
 		}
 		private void FixedUpdate()
@@ -36,14 +35,12 @@ namespace Game.Player
 			if (_xAxis != 0 || _zAxis != 0)
 			{
 				MoveWithPhysics(_xAxis, _zAxis);
-
 			}
 		}
 
 		private void MoveWithPhysics(float xAxis, float zAxis)
 		{
 			var dir = transform.right * xAxis + transform.forward * zAxis;
-
 			_rb.velocity += dir * _speed * Time.fixedDeltaTime;
 		}
 	}

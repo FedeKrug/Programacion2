@@ -15,14 +15,12 @@ namespace Game.Player
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				Jump();
-
 			}
 		}
 
 		private void Jump()
 		{
 			_rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
-
 		}
 	}
 }
