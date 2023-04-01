@@ -10,9 +10,10 @@ namespace Game.Player
 		[SerializeField] private float _jumpForce;
 		[SerializeField] private Rigidbody _rb;
 
+		[SerializeField] private KeyCode _jumpKey;
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(_jumpKey))
 			{
 				Jump();
 			}

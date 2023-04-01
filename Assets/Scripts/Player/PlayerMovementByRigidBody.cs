@@ -12,6 +12,9 @@ namespace Game.Player
         private float _speed;
         private float _xAxis, _zAxis;
 
+        [SerializeField] private KeyCode _sprintKey;
+
+
         private void Awake()
         {
             _speed = _minSpeed;
@@ -22,11 +25,11 @@ namespace Game.Player
             _zAxis = Input.GetAxisRaw("Vertical");
 
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            if (Input.GetKeyDown(_sprintKey))
             {
                 _speed = _maxSpeed;
             }
-            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+            if (Input.GetKeyUp(_sprintKey))
             {
                 _speed = _minSpeed;
             }
