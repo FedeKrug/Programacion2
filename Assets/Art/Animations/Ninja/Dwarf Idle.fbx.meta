@@ -1,32 +1,12 @@
 fileFormatVersion: 2
-guid: 9487112c2cade9d4f88f03912987a438
+guid: 517c90635aa0fa342b95931e4449496b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Kachujin_diffuse
-    second: {fileID: 2800000, guid: f793efc5afdb25244b01d158fbea4021, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Kachujin_diffuse_body
-    second: {fileID: 2800000, guid: eb1e6a49e11403d4aaab04127c849758, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Kachujin_normal
-    second: {fileID: 2800000, guid: db65e888ac94d7642887138f9220fb9b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Kachujin_specular
-    second: {fileID: 2800000, guid: d9f17287eafea4c46b407bdbf7f7a53a, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -120,7 +100,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
