@@ -35,7 +35,7 @@ public class AnimatedPlayer : MonoBehaviour
 
     private void Movement(float xAxis, float zAxis)
     {
-        var dir = (transform.right * xAxis + transform.forward * zAxis * _movementSpeed *Time.fixedDeltaTime);
+        var dir = (transform.right * xAxis + transform.forward * zAxis * _movementSpeed *Time.fixedDeltaTime).normalized;
         _rb.velocity = dir;
     }
 }
