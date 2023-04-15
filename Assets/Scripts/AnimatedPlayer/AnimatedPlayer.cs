@@ -11,7 +11,7 @@ public class AnimatedPlayer : MonoBehaviour
     [SerializeField] private float _movementSpeed;
     [SerializeField] private int _atkButton =0;
     [SerializeField] private Animator _anim;
-
+    [SerializeField] private string _xAxisName, _zAxisName;
 
 
     private void Awake()
@@ -28,8 +28,11 @@ public class AnimatedPlayer : MonoBehaviour
     }
     private void Update()
     {
-        _xAxis = Input.GetAxis("Horizontal");
-        _zAxis = Input.GetAxis("Vertical");
+        _xAxis = Input.GetAxisRaw("Horizontal");
+        _zAxis = Input.GetAxisRaw("Vertical");
+
+        _anim.SetFloat(_xAxisName, _xAxis);
+        _anim.SetFloat(_zAxisName, _zAxis);
     }
 
 
