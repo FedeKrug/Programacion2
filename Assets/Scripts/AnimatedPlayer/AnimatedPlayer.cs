@@ -10,6 +10,7 @@ public class AnimatedPlayer : MonoBehaviour
     private Rigidbody _rb;
     [SerializeField] private float _movementSpeed;
     [SerializeField] private int _atkButton =0;
+    [SerializeField] private Animator _anim;
 
 
 
@@ -17,6 +18,13 @@ public class AnimatedPlayer : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _rb.constraints = RigidbodyConstraints.FreezeRotation;
+        
+        if (_anim== null)
+        {
+            _anim = GetComponentInChildren<Animator>();
+        }
+
+
     }
     private void Update()
     {
