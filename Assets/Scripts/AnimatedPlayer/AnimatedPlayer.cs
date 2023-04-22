@@ -12,7 +12,13 @@ public class AnimatedPlayer : MonoBehaviour
     [SerializeField] private int _atkButton =0;
     [SerializeField] private Animator _anim;
     [SerializeField] private string _xAxisName, _zAxisName;
+    [SerializeField] private float _damage;
 
+    [Header ("Raycast")]
+    [SerializeField] private Transform _atkPos;
+    [SerializeField] private float _raycastDistance;
+    private Ray _atkRay;
+    private RaycastHit _hit;
 
     private void Awake()
     {
@@ -48,5 +54,13 @@ public class AnimatedPlayer : MonoBehaviour
     {
         var dir = (transform.right * xAxis + transform.forward * zAxis * _movementSpeed *Time.fixedDeltaTime).normalized;
         _rb.velocity = dir;
+    }
+    public void OnAttack()
+    {
+        _atkRay = new Ray(_atkPos.position, _atkPos.forward);
+        if (Physics.Raycast(_atkRay,out _hit, 1f))
+        {
+            _hit.collider.GetComponent<Tower>()?.OnHit(_damage, name);
+        }
     }
 }
