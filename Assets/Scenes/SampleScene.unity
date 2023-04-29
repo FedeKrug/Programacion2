@@ -1342,12 +1342,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.2588186, y: -0, z: -0, w: 0.965926}
-  m_LocalPosition: {x: 1.13, y: 4.85, z: -5.47}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1699167069}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1614,6 +1614,9 @@ MonoBehaviour:
   _anim: {fileID: 0}
   _xAxisName: 
   _zAxisName: 
+  _camPos: {fileID: 0}
+  _camFixedForward: {x: 0, y: 0, z: 0}
+  _camFixedRight: {x: 0, y: 0, z: 0}
 --- !u!54 &1365494263
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1785,6 +1788,38 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 9487112c2cade9d4f88f03912987a438, type: 3}
   m_PrefabInstance: {fileID: 113720869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1699167068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699167069}
+  m_Layer: 0
+  m_Name: CameraArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1699167069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699167068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.13, y: 4.85, z: -5.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 963194228}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1821893890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1950,6 +1985,9 @@ MonoBehaviour:
   _anim: {fileID: 1688728131}
   _xAxisName: xAxis
   _zAxisName: zAxis
+  _camPos: {fileID: 0}
+  _camFixedForward: {x: 0, y: 0, z: 0}
+  _camFixedRight: {x: 0, y: 0, z: 0}
 --- !u!54 &1973777180
 Rigidbody:
   m_ObjectHideFlags: 0
