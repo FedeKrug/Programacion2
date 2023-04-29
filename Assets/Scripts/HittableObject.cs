@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HittableObject : MonoBehaviour
+public class HittableObject : MonoBehaviour //TODO: implementar una interfaz hittable que tenga una función TakeDamage();
 {
     [SerializeField] private MeshRenderer _myMesh;
     [SerializeField] private Color _hitColor = Color.red;
