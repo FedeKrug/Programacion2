@@ -14,5 +14,6 @@ public class AnimatedPlayerProxy : MonoBehaviour
     private void OnStartAttack()
     {
         //TODO: llamar a una función OnAttack() del player
+        _player.Attack();
     }
 }
