@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -10,10 +9,10 @@ public class AnimatedPlayer : MonoBehaviour
 	[SerializeField] private float _xAxis, _zAxis;
 	private Rigidbody _rb;
 	[SerializeField] private float _movementSpeed;
-	[SerializeField] private int _atkButton = 0;
+	[SerializeField] private KeyCode _atkButton ;
 	[SerializeField] private Animator _anim;
 	[SerializeField] private string _xAxisName, _zAxisName;
-	[SerializeField] private bool _canMove; 
+	[SerializeField] private bool _canMove;
 
 	[Header("Camera Variables")]
 	[SerializeField] private Transform _camPos;
@@ -37,13 +36,18 @@ public class AnimatedPlayer : MonoBehaviour
 
 		_anim.SetFloat(_xAxisName, _xAxis);
 		_anim.SetFloat(_zAxisName, _zAxis);
+
+		if (Input.GetKeyDown(_atkButton))
+		{
+			Attack();
+		}
 	}
 
 
 	private void FixedUpdate()
 	{
-		
-		if ((_xAxis != 0 || _zAxis != 0)&& _canMove)
+
+		if ((_xAxis != 0 || _zAxis != 0) && _canMove)
 		{
 			Movement(_xAxis, _zAxis);
 		}
@@ -74,8 +78,10 @@ public class AnimatedPlayer : MonoBehaviour
 
 	public void Attack()
 	{
-
+		int attackNum = Random.Range(1, 3);
+		_anim.SetInteger("attackToDo",attackNum);
+		_canMove = false;
 	}
 
-	
+
 }
