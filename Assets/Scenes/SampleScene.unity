@@ -2000,7 +2000,7 @@ MonoBehaviour:
   _xAxis: 0
   _zAxis: 0
   _movementSpeed: 50
-  _atkButton: 0
+  _atkButton: 32
   _anim: {fileID: 1688728131}
   _xAxisName: xAxis
   _zAxisName: zAxis
