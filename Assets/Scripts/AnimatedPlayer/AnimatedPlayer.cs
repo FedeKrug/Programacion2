@@ -33,9 +33,12 @@ public class AnimatedPlayer : MonoBehaviour
 	{
 		_xAxis = Input.GetAxisRaw("Horizontal");
 		_zAxis = Input.GetAxisRaw("Vertical");
-
+		if (_canMove)
+		{
 		_anim.SetFloat(_xAxisName, _xAxis);
 		_anim.SetFloat(_zAxisName, _zAxis);
+
+		}
 
 		if (Input.GetKeyDown(_atkButton))
 		{
